@@ -4,46 +4,13 @@
 
 <h2>JavaScript Statements</h2>
 
+<script src="/src/js/script.js"></script>
 
-<button type="button" onclick="lastChar()">Click Me!</button>
+<button type="button" onclick="reversePhrase()">Click Me!</button>
 
-<p id="demo1"></p>
+<p id="demo1">This is an example!</p>
 <p id="demo2"></p>
 <p id="demo3"></p>
-
-<script>
-  // slice(), substring(), substr()
-/* function myFunction() {
-  let text = "Apple, Banana, Kiwi";
-  let sliced = text.slice(-4);
-  document.getElementById("demo1").innerHTML = sliced;
-} */
-/*
-function pads(){
-  let text = "5";
-  let paddedStart = text.padStart(4,"0");
-  let paddedEnd = text.padEnd(4,"0");
-  document.getElementById("demo1").innerHTML = paddedStart;
-  document.getElementById("demo2").innerHTML = paddedEnd;
-}*/
-
-
-function chars(){
-  let text = "Hatdog";
-  let getChar = text.charAt(2);
-  document.getElementById("demo1").innerHTML = getChar;
-}
-
-// generate a function that will return the last character of a string
-
-function lastChar(){
-  let text = "Hatdog";
-  let lastChar = text.charAt(text.length-1);
-  document.getElementById("demo1").innerHTML = lastChar;
-}
-
-
-</script>
 
 </body>
 </html>
