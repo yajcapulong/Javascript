@@ -16,7 +16,7 @@ function uidValidator(uidInput){
         if (char >= 'A' && char <= 'Z'){
             uppercaseCount++;
 
-        }else if (char >= '1' && char <= '9'){
+        }else if (char >= '0' && char <= '9'){
             digitCount++;
         }
     }
@@ -39,5 +39,5 @@ if (uidValidator(uidInput)) {
 
 } else {
   result.textContent = "Invalid";
-  
+
 }
