@@ -1,61 +1,44 @@
-function myFunction() {
-    let text = "Apple, Banana, Kiwi";
-    let sliced = text.slice(-4);
-    document.getElementById("demo1").innerHTML = sliced;
-} 
+function uidValidator(uidInput){
 
-function pads(){
-    let text = "5";
-    let paddedStart = text.padStart(4,"0");
-    let paddedEnd = text.padEnd(4,"0");
-    document.getElementById("demo1").innerHTML = paddedStart;
-    return document.getElementById("demo2").innerHTML = paddedEnd;
-}
+    var uid = document.getElementById("uidInput").value;
+    let uppercaseCount = 0;
+    let digitCount = 0;
 
-function chars(){
-    let text = "Hatdog";
-    let getChar = text.charAt(2);
-    document.getElementById("demo1").innerHTML = getChar;
-}
+    /* It must contain at least 2 uppercase English alphabet characters. 
+     It must contain at least 3 digits (0 - 9).
+     It should only contain alphanumeric characters (a - z, A - Z & 0 - 9).
+     No character should repeat.
+     There must be exactly 10 characters in a valid UID.
+    */
 
-function lastChar(){
-    let text = "Hatdog";
-    let lastChar = text.charAt(text.length-1);
-    document.getElementById("demo1").innerHTML = lastChar;
-}
+    if (uid.length != 10){
+        return false;
+    }
+    for (var i = 0; i < uid.length; i++){
+        var char = uid[i];
 
-function reversePhrase(){
-    let text = document.getElementById("demo1").innerHTML;
-    let splitText = text.split(" ").map((item) => item.split("").reverse().join("")).join(" ");
+        if (char >= 'A' && char <= 'Z'){
+            uppercaseCount++;
 
-    return document.getElementById("demo2").innerHTML = splitText;
-}
-
-// find the largest number in an array
-function largestNumber(){
-    let numArray = [10, 7, 5, 8, 25, 19];
-    let largestNum = Math.max(...numArray);
-    document.getElementById("demo1").innerHTML = largestNum;
-}
-
-//Word Count
-function wordCount(){
-    let text = document.getElementById("demo1").innerHTML;
-    let splitText = text.split(/[ ,]+/);
-    let wordCount = {};
-    
-    splitText.forEach(function(word) {
-        if (wordCount[word]){
-            wordCount[word] ++;
-        }else {
-            wordCount[word] = 1;
+        }else if (char >= '1' && char <= '9'){
+            digitCount++;
         }
-    });
-    const demo2 = document.getElementById("demo2");
-    for (const word in wordCount) {
-        const count = wordCount[word];
-        const wordCountElement = document.createElement("p");
-        wordCountElement.textContent = `${word}: ${count}`;
-        demo2.appendChild(wordCountElement);
-      }
+    }
+
+    if (uppercaseCount < 2 || digitCount < 3){
+        return false;
+    }
+
+    let uidRegex = /^[a-zA-Z0-9]{10}$/;
+    return uidRegex.test(uid);
+
+}
+
+var uidInput = document.getElementById("uidInput").value;
+var result = document.getElementById("uidResult");
+
+if (uidValidator(uidInput)) {
+  result.textContent = "Valid";
+} else {
+  result.textContent = "Invalid";
 }
