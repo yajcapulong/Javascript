@@ -1,61 +1,18 @@
-function myFunction() {
-    let text = "Apple, Banana, Kiwi";
-    let sliced = text.slice(-4);
-    document.getElementById("demo1").innerHTML = sliced;
-} 
+function swapCase(){
+    let text = document.getElementById("text").value;
+    let result = "";
+    for (let i = 0; i < text.length; i++){
+        let char = text[i];
 
-function pads(){
-    let text = "5";
-    let paddedStart = text.padStart(4,"0");
-    let paddedEnd = text.padEnd(4,"0");
-    document.getElementById("demo1").innerHTML = paddedStart;
-    return document.getElementById("demo2").innerHTML = paddedEnd;
-}
+        if (char === char.toUpperCase()){
+            result += char.toLowerCase();
 
-function chars(){
-    let text = "Hatdog";
-    let getChar = text.charAt(2);
-    document.getElementById("demo1").innerHTML = getChar;
-}
+        } else if (char === char.toLowerCase()) {
+            result += char.toUpperCase();
 
-function lastChar(){
-    let text = "Hatdog";
-    let lastChar = text.charAt(text.length-1);
-    document.getElementById("demo1").innerHTML = lastChar;
-}
-
-function reversePhrase(){
-    let text = document.getElementById("demo1").innerHTML;
-    let splitText = text.split(" ").map((item) => item.split("").reverse().join("")).join(" ");
-
-    return document.getElementById("demo2").innerHTML = splitText;
-}
-
-// find the largest number in an array
-function largestNumber(){
-    let numArray = [10, 7, 5, 8, 25, 19];
-    let largestNum = Math.max(...numArray);
-    document.getElementById("demo1").innerHTML = largestNum;
-}
-
-//Word Count
-function wordCount(){
-    let text = document.getElementById("demo1").innerHTML;
-    let splitText = text.split(/[ ,]+/);
-    let wordCount = {};
-    
-    splitText.forEach(function(word) {
-        if (wordCount[word]){
-            wordCount[word] ++;
-        }else {
-            wordCount[word] = 1;
+        } else {
+            result += char;
         }
-    });
-    const demo2 = document.getElementById("demo2");
-    for (const word in wordCount) {
-        const count = wordCount[word];
-        const wordCountElement = document.createElement("p");
-        wordCountElement.textContent = `${word}: ${count}`;
-        demo2.appendChild(wordCountElement);
-      }
+    }
+    document.getElementById("result").innerHTML = result;
 }
