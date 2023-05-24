@@ -1,10 +1,7 @@
+console.log("Script file loaded.");
 
 const EXPECTED_MINUTES_IN_OVEN = 40;
 const MINUTES_PER_LAYER = 2;
-
-let actualMinutesInOven = document.getElementById("actualMinutesInOven").value;
-let numOfLayers = document.getElementById("numOfLayers").value;
-
 
 function remainingMinsInOven(actualMinutesInOven){
     let result1 = EXPECTED_MINUTES_IN_OVEN - actualMinutesInOven;
@@ -21,3 +18,13 @@ function totalTimeInMins(numOfLayers, actualMinutesInOven){
     document.getElementById("result3").textContent = result3;
 }
 
+// Assuming you have a button with the ID "calculateButton" to trigger the calculations
+let calculateButton = document.getElementById("calculateButton");
+calculateButton.addEventListener("click", function() {
+    let actualMinutesInOven = parseInt(document.getElementById("actualMinutesInOven").value);
+    let numOfLayers = parseInt(document.getElementById("numOfLayers").value);
+
+    remainingMinsInOven(actualMinutesInOven);
+    prepTimeInMins(numOfLayers);
+    totalTimeInMins(numOfLayers, actualMinutesInOven);
+});
