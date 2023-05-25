@@ -17,7 +17,7 @@ function prepTimeInMins() {
 }
   
 function totalTimeInMins() {
-    let numLayers = parseFloat(document.getElementById("numOfLayers").value);
+    let numLayers = parseFloat(document.getElementById("numOfLayers").value);   
     let minsInOven = parseFloat(document.getElementById("actualMinutesInOven").value);
     let prepTime = prepTimeInMins(numLayers);
     let result3 = prepTime + minsInOven;
