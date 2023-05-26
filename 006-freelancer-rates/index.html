@@ -6,12 +6,12 @@
 
 <script src="/006-freelancer-rates/src/js/script.js"></script>
 
-<input type="number" id="actualMinutesInOven" placeholder="mins in the oven"><br>
-<input type="number" id="numOfLayers" placeholder="number of layers"><br>
+<input type="number" id="ratePerHour" placeholder="Rate/hr"><br>
+<input type="number" id="budget" placeholder="Budget"><br>
+<input type="number" id="numDays" placeholder="Number of Working Days"><br>
 
-<button id="calculateButton" onclick="remainingMinsInOven()">Calculate remaining mins</button>
-<button id="calculateButton" onclick="prepTimeInMins()">Calculate prep time</button>
-<button id="calculateButton" onclick="totalTimeInMins()">Calculate total time</button>
+
+<button id="calculateButton" onclick="dayRate()">Calculate</button>
 
 
 <p id="result1"></p>
