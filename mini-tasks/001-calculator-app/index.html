@@ -2,20 +2,32 @@
 <html>
 <body>
 
+<link rel="stylesheet" href="/mini-tasks/001-calculator-app/src/css/core.css">
+
 <h2>Calculator</h2>
 
-<input type="number" id="num1">
-<input type="number" id="num2">
+<div class="container">
+    <div class="calculatorContainer">
+        <div class="inputContainer">
+            <input type="number" id="num1">
+            <input type="number" id="num2">
+        </div>
+    
+        <div class="button-container">
+            <button class="button" type="button" onclick="add()">Add (+)</button>
+            <button class="button" type="button" onclick="subtract()">Subtract (-)</button>
+            <button class="button" type="button" onclick="multiply()">Multiply (*)</button>
+            <button class="button" type="button" onclick="divide()">Divide (/)</button>
+        </div>
+    
+        <div id="resultContainer">The result is:</div>
+        <div id="result"></div>
+    </div>
+</div>
 
-<br>
-<button type="button" onclick="add()">Add (+)</button>
-<button type="button" onclick="subtract()">Subtract (-)</button>
-<button type="button" onclick="multiply()">Multiply (*)</button>
-<button type="button" onclick="divide()">Divide (/)</button>
 
-<div id="result"></div>
 
-<script src="/Javascript/src/js/script.js"></script>
+<script src="/mini-tasks/001-calculator-app/src/js/script.js"></script>
 
 </body>
 </html>
