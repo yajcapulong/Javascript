@@ -2,18 +2,25 @@
 <html>
 <body>
 
-<script src="/src/js/script.js"></script>
-
+<script src="/mini-tasks/002-uid-validator/src/js/script.js"></script>
+<link rel="stylesheet" href="/mini-tasks/002-uid-validator/src/css/core.css">
 <h2>UID Validator</h2>
 
-<input type="text" id="uidInput">
+<div class="container1">
+    <div class="container2">
+        <div class="inputContainer">
+            <input type="text" id="uidInput" placeholder="Input UID Number here">
+        </div>
+        
+        <div class="button-container">
+            <button class="button" type="button" onclick="validateUID()">Validate</button>
+        </div>
+        
+        <div class="result" id="uidResult"></div>
+    </div>
+   
+</div>
 
-<br>
-<br>
-<button type="button" onclick="validateUID()">Validate</button>
-
-
-<div id="uidResult"></div>
 
 </body>
 </html>
