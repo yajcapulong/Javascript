@@ -10,10 +10,10 @@ function validateUID() {
     // Validate the user ID.
     if (uidValidator(uid)) {
       // The user ID is valid.
-      result.textContent = "Valid";
+      result.textContent = "UID is Valid";
     } else {
       // The user ID is invalid.
-      result.textContent = "Invalid";
+      result.textContent = "UID is Invalid";
     }
   }
   
