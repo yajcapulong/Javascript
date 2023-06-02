@@ -12,22 +12,15 @@ function insertItemAtTop(cards, newCard) {
   return cards;
 }
 
-/**
- * Remove the card at the 0-based position
- *
- * @param {number[]} cards
- * @param {number} position
- *
- * @returns {number[]} the cards without the removed card
- */
 function removeItem(cards, position) {
-  
   if (position == 0){
     cards.shift();
     return cards;
+
   } if (cards[position] == cards.length){
     cards.pop();
     return cards;
+    
   } if (position == 1){
     cards.pop(1);
     return cards;
