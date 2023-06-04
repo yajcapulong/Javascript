@@ -2,7 +2,8 @@ const hrsPerDay = 8;
 const billDays = 22;
 
 function dayRate(ratePerHour) {
-  return hrsPerDay * ratePerHour;
+  dayRateResult = hrsPerDay * ratePerHour;
+  return document.getElementById("result1").textContent = "Day Rate: " + dayRateResult;
 }
 
 function daysInBudget(budget, ratePerHour) {
